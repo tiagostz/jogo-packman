@@ -343,4 +343,22 @@ window.addEventListener('resize', () => {
 });
 window.addEventListener('orientationchange', () => {
     setTimeout(renderAll, 100);
-}); 
+});
+
+// Controles do D-Pad para mobile
+const dpadUp = document.getElementById('dpad-up');
+const dpadDown = document.getElementById('dpad-down');
+const dpadLeft = document.getElementById('dpad-left');
+const dpadRight = document.getElementById('dpad-right');
+
+if (dpadUp && dpadDown && dpadLeft && dpadRight) {
+    dpadUp.addEventListener('touchstart', function(e) { e.preventDefault(); movePacman(0, -1); });
+    dpadDown.addEventListener('touchstart', function(e) { e.preventDefault(); movePacman(0, 1); });
+    dpadLeft.addEventListener('touchstart', function(e) { e.preventDefault(); movePacman(-1, 0); });
+    dpadRight.addEventListener('touchstart', function(e) { e.preventDefault(); movePacman(1, 0); });
+    // Também permite clique para desktop
+    dpadUp.addEventListener('click', function(e) { e.preventDefault(); movePacman(0, -1); });
+    dpadDown.addEventListener('click', function(e) { e.preventDefault(); movePacman(0, 1); });
+    dpadLeft.addEventListener('click', function(e) { e.preventDefault(); movePacman(-1, 0); });
+    dpadRight.addEventListener('click', function(e) { e.preventDefault(); movePacman(1, 0); });
+} 
