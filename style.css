@@ -1,0 +1,53 @@
+body {
+    background: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --tile-size: 32px;
+}
+
+#game-container {
+    display: block;
+    margin: 20px auto 0 auto;
+    background: #222;
+    border: 4px solid #ffd700;
+    /* Usar variável para tamanho dos blocos */
+    width: calc(var(--tile-size) * 19);
+    height: calc(var(--tile-size) * 15);
+    max-width: 100vw;
+    max-height: 100vw;
+    box-sizing: content-box;
+}
+#score {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+@media (max-width: 700px) {
+    :root {
+        --tile-size: calc((100vw - 8px) / 19);
+    }
+    #game-container {
+        border-width: 2px;
+        margin-top: 10px;
+        width: calc(var(--tile-size) * 19);
+        height: calc(var(--tile-size) * 15);
+        max-width: 100vw;
+        max-height: 100vw;
+    }
+    body {
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    #score {
+        font-size: 1em;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+} 
